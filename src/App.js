@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, Container, TextareaAutosize, Typography, Box } from '@mui/material';
-import { Feedback, ThumbUp, ThumbDown } from '@mui/icons-material';
+import { ThumbUp, ThumbDown } from '@mui/icons-material';
 
 function InputArea({ onGenerate }) {
   const [input, setInput] = useState("");
