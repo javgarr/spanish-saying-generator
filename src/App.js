@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import { Button, Container, TextareaAutosize, Typography, Box } from '@mui/material';
 import { ThumbUp, ThumbDown } from '@mui/icons-material';
@@ -37,7 +37,7 @@ Generate Saying
 function OutputArea({ saying, loading, onFeedback }) {
   return (
   <Box my={4}>
-  {loading && <Typography variant="h6">Loading...</Typography>}
+  {loading && <Typography variant="h5">Loading...</Typography>}
   {saying && !loading && (
     <div>
     <Typography variant="h5">{saying}</Typography>
@@ -63,33 +63,37 @@ function App() {
   const [saying, setSaying] = useState("");
   const [loading, setLoading] = useState(false);
   const [copySuccess, setCopySuccess] = useState('');
+  const textAreaRef = useRef(null);
 
   const handleGenerate = async (input) => {
-  setLoading(true);
-  try {
-    const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-      model: "gpt-4",
-      messages: [{
-        role: "user",
-        content: `your job is to give me an existing short traditional Spanish saying that can portray the following scenario: "${input}"`
-      }],
-      temperature: 0.7,
-      max_tokens: 50
-    }, {
-      headers: {
-        'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
-        'Content-Type': 'application/json'
-      }
-    });
-    console.log()
-    const generatedText = response.data.choices?.[0]?.message.content;
-    setSaying(generatedText);
-  } catch (error) {
-    console.error("Error generating saying:", error);
-    setSaying("An error occurred. Please try again.");
-  } finally {
-    setLoading(false);
-  }
+  if (textAreaRef.current) {
+    textAreaRef.current.blur();
+}
+setLoading(true);
+try {
+  const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+    model: "gpt-4",
+    messages: [{
+      role: "user",
+      content: `your job is to give me an existing short traditional Spanish saying that can portray the following scenario: "${input}"`
+    }],
+    temperature: 0.7,
+    max_tokens: 50
+  }, {
+    headers: {
+      'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
+      'Content-Type': 'application/json'
+    }
+  });
+  console.log()
+  const generatedText = response.data.choices?.[0]?.message.content;
+  setSaying(generatedText);
+} catch (error) {
+  console.error("Error generating saying:", error);
+  setSaying("An error occurred. Please try again.");
+} finally {
+  setLoading(false);
+}
 };
 
 const handleFeedback = (isRelevant) => {
@@ -116,8 +120,8 @@ return (
 <ThemeProvider theme={theme}>
 <Container maxWidth="sm">
 <Box my={6} textAlign="center">
-<Typography variant="h4" gutterBottom>What's on your mind?</Typography>
-<InputArea onGenerate={handleGenerate} />
+<Typography variant="h5" gutterBottom>What's on your mind?</Typography>
+<InputArea ref={textAreaRef} onGenerate={handleGenerate} />
 <OutputArea saying={saying} loading={loading} onFeedback={handleFeedback} />
 {copySuccess && <div style={{ color: 'green' }}>{copySuccess}</div>}
 </Box>
