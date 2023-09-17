@@ -17,7 +17,7 @@ function InputArea({ onGenerate }) {
   return (
     <Box my={4}>
       <TextareaAutosize
-        minRows={5}
+        minRows={2}
         style={{ width: '100%', padding: '1em' }}
         placeholder="I bet you we have a saying in Spain for it..."
         value={input}
@@ -71,7 +71,7 @@ function App() {
         model: "gpt-3.5-turbo",
         messages: [{
           role: "user",
-          content: `your job is to give me an existing short traditional Spanish saying that can portray the following scenario (and its translation): "${input}"`
+          content: `your job is to give me an existing short traditional Spanish saying that can portray the following scenario. Add its translation: "${input}"`
         }],
         temperature: 0.5,
         max_tokens: 75
@@ -118,7 +118,7 @@ function App() {
           <Typography variant="h5" gutterBottom>What's on your mind?</Typography>
           <InputArea onGenerate={handleGenerate} />
           <OutputArea saying={saying} loading={loading} onFeedback={handleFeedback} />
-          {copySuccess && <div style={{ color: 'green' }}>{copySuccess}</div>}
+            {copySuccess && <div>{copySuccess}</div>}
         </Box>
       </Container>
     </ThemeProvider>

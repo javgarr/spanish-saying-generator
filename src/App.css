@@ -14,9 +14,9 @@
 }
 
 textarea {
-  width: 100%;       /* Take up the full width of its container */
+  width: 90%;       /* Take up the full width of its container */
   min-height: 150px; /* Set a minimum height so it's always reasonably tall */
-  padding: 10px;     /* Provide some internal spacing for comfort */
+  padding: 30px;     /* Provide some internal spacing for comfort */
   resize: vertical;  /* Allow users to resize the textarea vertically if they wish */
   box-sizing: border-box; /* Ensures padding and borders don't increase its total size */
 }
