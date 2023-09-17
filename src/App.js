@@ -41,7 +41,7 @@ function OutputArea({ saying, loading, onFeedback }) {
   {saying && !loading && (
     <div>
     <Typography variant="h5">{saying}</Typography>
-    <Box mt={2}>
+    <Box mt={2} style={{ paddingBottom: '50px' }}>
     <Button startIcon={<ThumbUp />} onClick={() => onFeedback(true)}>Love it</Button>
     <Button startIcon={<ThumbDown />} onClick={() => onFeedback(false)}>Yeah...nah</Button>
     </Box>
