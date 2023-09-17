@@ -75,10 +75,10 @@ try {
     model: "gpt-4",
     messages: [{
       role: "user",
-      content: `your job is to give me an existing short traditional Spanish saying that can portray the following scenario: "${input}"`
+      content: `your job is to give me an existing short traditional Spanish saying that can portray the following scenario (and its translation): "${input}"`
     }],
     temperature: 0.7,
-    max_tokens: 50
+    max_tokens: 75
   }, {
     headers: {
       'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
