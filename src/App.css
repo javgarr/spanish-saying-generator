@@ -44,12 +44,12 @@ textarea {
 
 textarea:focus {
   outline: none;               /* Remove the default browser outline */
-  border-color: #FFDD00;      /* Use a distinct border color, you can choose your preferred color */
-  box-shadow: 0 0 5px #FFDD00; /* Add a subtle glow */
+  border-color: #C60C30;      /* Use a distinct border color, you can choose your preferred color */
+  box-shadow: 0 0 5px #C60C30; /* Add a subtle glow */
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #C60C30;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@ textarea:focus {
 }
 
 .App-link {
-  color: #61dafb;
+  color: #C60C30;
 }
 
 @keyframes App-logo-spin {
