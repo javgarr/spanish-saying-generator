@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css'
 import axios from 'axios';
 import { Button, Container, TextareaAutosize, Typography, Box } from '@mui/material';
 import { ThumbUp, ThumbDown } from '@mui/icons-material';
@@ -15,15 +16,16 @@ function InputArea({ onGenerate }) {
   };
 
   return (
-    <Box my={4}>
-      <TextareaAutosize
-        minRows={2}
-        style={{ width: '100%', padding: '1em' }}
-        placeholder="I bet you we have a saying in Spain for it..."
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        onKeyPress={handleKeyPress}
-      />
+    <Box my={4} position={'relative'}>
+        <TextareaAutosize
+          minRows={2}
+          style={{ width: '100%', padding: '1em' }}
+          placeholder="I bet they have a saying in Spain for..."
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyPress={handleKeyPress}
+        />
+        {input && (<button className='round-button' style={{position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-200%)', cursor: 'pointer'}} onClick={() => setInput('')}>x</button>)}
       <Box mt={2}>
         <Button variant="contained" color="primary" onClick={() => onGenerate(input)}>
           Generate Saying
@@ -41,7 +43,7 @@ function OutputArea({ saying, loading, onFeedback }) {
         <div>
           <Typography variant="h5">{saying}</Typography>
           <Box mt={2}>
-            <Button startIcon={<ThumbUp />} onClick={() => onFeedback(true)}>Love it</Button>
+            <Button startIcon={<ThumbUp />} onClick={() => onFeedback(true)}>Spot On Mate</Button>
             <Button startIcon={<ThumbDown />} onClick={() => onFeedback(false)}>Yeah...nah</Button>
           </Box>
         </div>
@@ -115,10 +117,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <Container maxWidth="sm" padding='10px'>
         <Box my={6} textAlign="center" style={{ paddingBottom: '50px' }}>
-          <Typography variant="h5" gutterBottom>What's on your mind?</Typography>
           <InputArea onGenerate={handleGenerate} />
           <OutputArea saying={saying} loading={loading} onFeedback={handleFeedback} />
-            {copySuccess && <div>{copySuccess}</div>}
+          {copySuccess && <div style={{ color: 'green', padding: '5px 10px', border: '1px solid green', borderRadius: '20px', display: 'inline-block' }}>{copySuccess}</div>}
         </Box>
       </Container>
     </ThemeProvider>

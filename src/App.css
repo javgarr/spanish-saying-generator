@@ -14,11 +14,35 @@
 }
 
 textarea {
-  width: 90%;       /* Take up the full width of its container */
-  min-height: 150px; /* Set a minimum height so it's always reasonably tall */
-  padding: 30px;     /* Provide some internal spacing for comfort */
-  resize: vertical;  /* Allow users to resize the textarea vertically if they wish */
-  box-sizing: border-box; /* Ensures padding and borders don't increase its total size */
+  /* Take up the full width of its container */
+  width: 100%;
+  /* Set a minimum height so it's always reasonably tall */
+  min-height: 50px;
+  /* Provide some internal spacing for comfort */
+  padding: 30px;
+  /* Allow users to resize the textarea vertically if they wish */
+  resize: vertical;
+  /* Ensures padding and borders don't increase its total size */
+  box-sizing: border-box;
+}
+
+.round-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #C60C30;
+  color: #ffffff;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.round-button:hover {
+  background-color: #a00a24;
 }
 
 /* Mobile devices */
@@ -38,14 +62,17 @@ textarea {
 /* Desktop and larger */
 @media (min-width: 1025px) {
   textarea {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
 textarea:focus {
-  outline: none;               /* Remove the default browser outline */
-  border-color: #C60C30;      /* Use a distinct border color, you can choose your preferred color */
-  box-shadow: 0 0 5px #C60C30; /* Add a subtle glow */
+  /* Remove the default browser outline */
+  outline: none;
+  /* Use a distinct border color, you can choose your preferred color */
+  border-color: #C60C30;
+  /* Add a subtle glow */
+  box-shadow: 0 0 5px #C60C30;
 }
 
 .App-header {
@@ -67,6 +94,7 @@ textarea:focus {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
