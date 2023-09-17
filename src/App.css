@@ -13,6 +13,41 @@
   }
 }
 
+textarea {
+  width: 100%;       /* Take up the full width of its container */
+  min-height: 150px; /* Set a minimum height so it's always reasonably tall */
+  padding: 10px;     /* Provide some internal spacing for comfort */
+  resize: vertical;  /* Allow users to resize the textarea vertically if they wish */
+  box-sizing: border-box; /* Ensures padding and borders don't increase its total size */
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  textarea {
+    font-size: 1.2rem;
+  }
+}
+
+/* Tablet devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+  textarea {
+    font-size: 1.4rem;
+  }
+}
+
+/* Desktop and larger */
+@media (min-width: 1025px) {
+  textarea {
+    font-size: 1.5rem;
+  }
+}
+
+textarea:focus {
+  outline: none;               /* Remove the default browser outline */
+  border-color: #FFDD00;      /* Use a distinct border color, you can choose your preferred color */
+  box-shadow: 0 0 5px #FFDD00; /* Add a subtle glow */
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -7,6 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.bmc-container {
+  position: fixed;    /* Makes the container stick to the window */
+  bottom: 0;          /* Position it at the bottom */
+  left: 0;
+  right: 0;
+  display: flex;      /* Uses flexbox to center and align content */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center;     /* Vertically center the content */
+  background-color: rgba(0, 0, 0, 0.05); /* Optional: Add a slight background to make it stand out */
+  padding: 10px;      /* Some spacing around */
+  z-index: 1000;      /* Ensures it stays on top of other content */
+}
+
+.bmc-container p {
+  margin-right: 10px; /* Adds a bit of space between the text and the button */
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
