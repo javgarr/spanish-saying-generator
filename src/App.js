@@ -17,15 +17,15 @@ function InputArea({ onGenerate }) {
 
   return (
     <Box my={4} position={'relative'}>
-        <TextareaAutosize
-          minRows={2}
-          style={{ width: '100%', padding: '1em' }}
-          placeholder="What's on your mind?"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyPress={handleKeyPress}
-        />
-        {input && (<button className='round-button' style={{position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-200%)', cursor: 'pointer'}} onClick={() => setInput('')}>x</button>)}
+      <TextareaAutosize
+        minRows={2}
+        style={{ width: '100%', padding: '1em', paddingRight: '50px' }}
+        placeholder="What's on your mind?"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        onKeyPress={handleKeyPress}
+      />
+      {input && (<button className='round-button' style={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-200%)', cursor: 'pointer' }} onClick={() => setInput('')}>x</button>)}
       <Box mt={2}>
         <Button variant="contained" color="primary" onClick={() => onGenerate(input)}>
           Generate Saying
