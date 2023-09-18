@@ -1,0 +1,26 @@
+{
+    "en": {
+        "submit": "Generate Saying",
+        "placeholder": "What's on your mind?",
+        "loading": "Generating...",
+        "positivefeedback": "SPOT ON MATE!",
+        "negativefeedback": "YEH...NAH",
+        "copied": "Copied to clipboard",
+        "couldnotcopy": "Oops. Had trouble copying it.",
+        "lovingit": "Loving it?",
+        "errorgenerating": "Error generating saying:",
+        "genericerror": "An error occurred. Please try again."
+    },
+    "es": {
+        "submit": "Generar Dicho Español",
+        "placeholder": "Qué tienes en mente?",
+        "loading": "Generando...",
+        "positivefeedback": "LO HAS CLAVADO",
+        "negativefeedback": "HMM...NO",
+        "copied": "Copiado! ve y compártelo",
+        "couldnotcopy": "Toma un pantallazo y compártelo!",
+        "lovingit": "Disfrutándolo?",
+        "errorgenerating": "Error generando el dicho:",
+        "genericerror": "Error. Por favor prueba de nuevo más tarde."
+    }
+}

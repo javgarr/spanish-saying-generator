@@ -1,11 +1,12 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css'
+import translations from './translations.json';
 import axios from 'axios';
 import { Button, Container, TextareaAutosize, Typography, Box } from '@mui/material';
 import { ThumbUp, ThumbDown } from '@mui/icons-material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-function InputArea({ onGenerate }) {
+function InputArea({ onGenerate, strings }) {
   const [input, setInput] = useState("");
   const textareaRef = useRef(null);
 
@@ -14,7 +15,7 @@ function InputArea({ onGenerate }) {
       event.preventDefault(); // Prevent the default action (new line) 
       if (textareaRef.current) {
         textareaRef.current.blur();
-      }  
+      }
       onGenerate(input);
     }
   };
@@ -25,7 +26,7 @@ function InputArea({ onGenerate }) {
         ref={textareaRef}
         minRows={2}
         style={{ width: '100%', padding: '1em', paddingRight: '50px' }}
-        placeholder="What's on your mind?"
+        placeholder={strings.placeholder}
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyPress={handleKeyPress}
@@ -33,23 +34,23 @@ function InputArea({ onGenerate }) {
       {input && (<button className='round-button' style={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-200%)', cursor: 'pointer' }} onClick={() => setInput('')}>x</button>)}
       <Box mt={2}>
         <Button variant="contained" color="primary" onClick={() => onGenerate(input)}>
-          Generate Saying
+          {strings.submit}
         </Button>
       </Box>
     </Box>
   );
 }
 
-function OutputArea({ saying, loading, onFeedback }) {
+function OutputArea({ saying, loading, onFeedback, strings }) {
   return (
     <Box my={4}>
-      {loading && <Typography variant="h5">Loading...</Typography>}
+      {loading && <Typography variant="h5">{strings.loading}</Typography>}
       {saying && !loading && (
         <div>
           <Typography variant="h5">{saying}</Typography>
           <Box mt={2}>
-            <Button startIcon={<ThumbUp />} onClick={() => onFeedback(true)}>Spot On Mate</Button>
-            <Button startIcon={<ThumbDown />} onClick={() => onFeedback(false)}>Yeah...nah</Button>
+            <Button startIcon={<ThumbUp />} onClick={() => onFeedback(true)}>{strings.positivefeedback}</Button>
+            <Button startIcon={<ThumbDown />} onClick={() => onFeedback(false)}>{strings.negativefeedback}</Button>
           </Box>
         </div>
       )}
@@ -69,6 +70,20 @@ function App() {
   const [saying, setSaying] = useState("");
   const [loading, setLoading] = useState(false);
   const [copySuccess, setCopySuccess] = useState('');
+  // eslint-disable-next-line no-unused-vars
+  const [locale, setLocale] = useState("en");
+  const [strings, setStrings] = useState({});
+
+  useEffect(() => {
+    // Check if the browser's language starts with 'es' (for any Spanish variant)
+    if (navigator.language.startsWith('es')) {
+      setLocale('es');
+      setStrings(translations.es);
+    } else {
+      setLocale('en');
+      setStrings(translations.en);
+    }
+  }, []);
 
   const handleGenerate = async (input) => {
 
@@ -92,8 +107,8 @@ function App() {
       const generatedText = response.data.choices?.[0]?.message.content;
       setSaying(generatedText);
     } catch (error) {
-      console.error("Error generating saying:", error);
-      setSaying("An error occurred. Please try again.");
+      console.error(strings.errorgenerating, error);
+      setSaying(strings.genericerror);
     } finally {
       setLoading(false);
     }
@@ -111,10 +126,10 @@ function App() {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(saying)
       .then(() => {
-        setCopySuccess('Copied to clipboard!');
+        setCopySuccess(strings.copied);
       })
       .catch(err => {
-        console.error('Could not copy text: ', err);
+        console.error(strings.couldnotcopy, err);
       });
   };
 
@@ -122,8 +137,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <Container maxWidth="sm" padding='10px'>
         <Box my={6} textAlign="center" style={{ paddingBottom: '50px' }}>
-          <InputArea onGenerate={handleGenerate} />
-          <OutputArea saying={saying} loading={loading} onFeedback={handleFeedback} />
+          <InputArea onGenerate={handleGenerate} strings={strings} />
+          <OutputArea saying={saying} loading={loading} onFeedback={handleFeedback} strings={strings} />
           {copySuccess && <div style={{ color: 'green', padding: '5px 10px', border: '1px solid green', borderRadius: '20px', display: 'inline-block' }}>{copySuccess}</div>}
         </Box>
       </Container>
