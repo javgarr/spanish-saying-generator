@@ -8,6 +8,7 @@ import { faApple, faAndroid } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
     const [activeModal, setActiveModal] = useState(null);
+    // eslint-disable-next-line no-unused-vars
     const [locale, setLocale] = useState("en");
     const [strings, setStrings] = useState({});
   
@@ -20,7 +21,7 @@ const Footer = () => {
         setLocale('en');
         setStrings(translations.en);
       }
-      console.log('Locale set to: ' + locale)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   
     return (
