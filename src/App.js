@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.css'
+import Footer from './Footer'; // Import the Footer component
 import translations from './translations.json';
 import axios from 'axios';
 import { Button, Container, TextareaAutosize, Typography, Box } from '@mui/material';
@@ -93,9 +94,9 @@ function App() {
         model: "gpt-3.5-turbo",
         messages: [{
           role: "user",
-          content: `your job is to give me an existing short traditional Spanish saying that can portray the following scenario. Add its translation: "${input}"`
+          content: `your job is to find a short traditional Spanish saying that can portray the given scenario ${(locale==='en'? '(and its translation)': '(do not include its translation)')}: ${input}`
         }],
-        temperature: 0.5,
+        temperature: 0.7,
         max_tokens: 75
       }, {
         headers: {
@@ -124,24 +125,41 @@ function App() {
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(saying)
-      .then(() => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(saying)
+        .then(() => {
+          setCopySuccess(strings.copied);
+        })
+        .catch(err => {
+          console.error(strings.couldnotcopy, err);
+        });
+    } else {
+      // Fallback for older browsers (including Safari before 13.4)
+      const textarea = document.createElement('textarea');
+      textarea.value = saying;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
         setCopySuccess(strings.copied);
-      })
-      .catch(err => {
-        console.error(strings.couldnotcopy, err);
-      });
+      } catch (err) {
+        console.error('Fallback: Oops, unable to copy', err);
+      }
+      document.body.removeChild(textarea);
+
+    }
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="sm" padding='10px'>
+      <Container className='app-container' maxWidth="sm">
         <Box my={6} textAlign="center" style={{ paddingBottom: '50px' }}>
           <InputArea onGenerate={handleGenerate} strings={strings} />
           <OutputArea saying={saying} loading={loading} onFeedback={handleFeedback} strings={strings} />
           {copySuccess && <div style={{ color: 'green', padding: '5px 10px', border: '1px solid green', borderRadius: '20px', display: 'inline-block' }}>{copySuccess}</div>}
         </Box>
       </Container>
+      <Footer />
     </ThemeProvider>
   );
 }

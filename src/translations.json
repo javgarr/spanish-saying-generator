@@ -1,6 +1,6 @@
 {
     "en": {
-        "submit": "Generate Saying",
+        "submit": "Find a Spanish Saying",
         "placeholder": "What's on your mind?",
         "loading": "Generating...",
         "positivefeedback": "SPOT ON MATE!",
@@ -9,18 +9,34 @@
         "couldnotcopy": "Oops. Had trouble copying it.",
         "lovingit": "Loving it?",
         "errorgenerating": "Error generating saying:",
-        "genericerror": "An error occurred. Please try again."
+        "genericerror": "An error occurred. Please try again.",
+        "buymecoffee": "Buy me a coffee",
+        "howtoinstall": "How to install on",
+        "installios": "Install on iOS",
+        "installandroid": "Install on Android",
+        "instructions": {
+            "ios": " 1. Open this website on your device\n 2. Tap the \"Share\" button\n 3. Scroll down and tap \"Add to Home Screen\"\n 4. Tap \"Add\", done!",
+            "android": " 1. Open this website on your device\n 2. Tap the three dots on the top right.\n 3. Tap \"Add to Home screen\".\n 4. Tap \"Add\", done!"
+        }
     },
     "es": {
-        "submit": "Generar Dicho Español",
+        "submit": "Buscar Dicho Español",
         "placeholder": "Qué tienes en mente?",
         "loading": "Generando...",
         "positivefeedback": "LO HAS CLAVADO",
         "negativefeedback": "HMM...NO",
         "copied": "Copiado! ve y compártelo",
         "couldnotcopy": "Toma un pantallazo y compártelo!",
-        "lovingit": "Disfrutándolo?",
+        "lovingit": "disfrutando?",
         "errorgenerating": "Error generando el dicho:",
-        "genericerror": "Error. Por favor prueba de nuevo más tarde."
+        "genericerror": "Error. Por favor prueba de nuevo más tarde.",
+        "buymecoffee": "Invítame a un café",
+        "howtoinstall": "Cómo instalar en",
+        "installios": "Instalar en iOS",
+        "installandroid": "Instalar en Android",
+        "instructions": {
+            "ios": " 1. Abre esta página web en tu dispositivo\n 2. Dale al botón de \"Compartir\"\n 3. Haz scroll y selecciona \"Añadir a la pantalla de inicio\"\n 4. Dale a \"Añadir\", hecho!",
+            "android": " 1. Abre esta página web en tu dispositivo\n 2. Dale a los tres botones arriba a la derecha.\n 3. Dale a \"Añadir a la pantalla de inicio\".\n 4. Dale a \"Añadir\", hecho!"
+        }
     }
 }

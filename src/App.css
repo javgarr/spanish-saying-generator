@@ -13,6 +13,12 @@
   }
 }
 
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  overflow-y: auto; /* Makes the container scrollable vertically */
+}
+
 textarea {
   /* Take up the full width of its container */
   width: 100%;
