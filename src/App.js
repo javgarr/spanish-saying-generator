@@ -71,7 +71,6 @@ function App() {
   const [saying, setSaying] = useState("");
   const [loading, setLoading] = useState(false);
   const [copySuccess, setCopySuccess] = useState('');
-  // eslint-disable-next-line no-unused-vars
   const [locale, setLocale] = useState("en");
   const [strings, setStrings] = useState({});
 

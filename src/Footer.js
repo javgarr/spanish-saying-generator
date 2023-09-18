@@ -20,6 +20,7 @@ const Footer = () => {
         setLocale('en');
         setStrings(translations.en);
       }
+      console.log('Locale set to: ' + locale)
     }, []);
   
     return (
