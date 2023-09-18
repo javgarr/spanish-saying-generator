@@ -34,7 +34,7 @@ function InputArea({ onGenerate, strings }) {
       />
       {input && (<button className='round-button' style={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-200%)', cursor: 'pointer' }} onClick={() => setInput('')}>x</button>)}
       <Box mt={2}>
-        <Button variant="contained" color="primary" onClick={() => onGenerate(input)}>
+        <Button variant="contained" color="primary" onClick={() => {if(input) {onGenerate(input)} else {textareaRef.current.focus()} }}>
           {strings.submit}
         </Button>
       </Box>
