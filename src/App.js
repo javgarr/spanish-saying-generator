@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.css'
-import Footer from './Footer'; // Import the Footer component
+import Footer from './Footer';
 import translations from './translations.json';
 import axios from 'axios';
 import { Button, Container, TextareaAutosize, Typography, Box } from '@mui/material';
@@ -93,7 +93,7 @@ function App() {
         model: "gpt-3.5-turbo",
         messages: [{
           role: "user",
-          content: `${(locale === 'en' ? 'your job is to find a short traditional Spanish saying that can portray the given scenario (and its translation)' : 'dame un dicho o expresión tradicional español para la siguiente situación: ')}:\n ${input}`
+          content: `${(locale === 'en' ? 'your job is to find a short traditional Spanish saying that can portray the given scenario (and its translation)' : 'dame un dicho, expresión o refrán popular español para la siguiente situación: ')}:\n ${input}`
         }],
         temperature: 1.5,
         max_tokens: 75
