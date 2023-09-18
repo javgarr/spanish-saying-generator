@@ -20,7 +20,7 @@ function InputArea({ onGenerate }) {
         <TextareaAutosize
           minRows={2}
           style={{ width: '100%', padding: '1em' }}
-          placeholder="I bet they have a saying in Spain for..."
+          placeholder="What's on your mind?"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={handleKeyPress}
