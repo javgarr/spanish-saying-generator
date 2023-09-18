@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './App.css'
 import axios from 'axios';
 import { Button, Container, TextareaAutosize, Typography, Box } from '@mui/material';
@@ -7,10 +7,14 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 function InputArea({ onGenerate }) {
   const [input, setInput] = useState("");
+  const textareaRef = useRef(null);
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter' && event.shiftKey === false) {
       event.preventDefault(); // Prevent the default action (new line) 
+      if (textareaRef.current) {
+        textareaRef.current.blur();
+      }  
       onGenerate(input);
     }
   };
@@ -18,6 +22,7 @@ function InputArea({ onGenerate }) {
   return (
     <Box my={4} position={'relative'}>
       <TextareaAutosize
+        ref={textareaRef}
         minRows={2}
         style={{ width: '100%', padding: '1em', paddingRight: '50px' }}
         placeholder="What's on your mind?"
