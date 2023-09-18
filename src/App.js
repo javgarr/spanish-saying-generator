@@ -34,7 +34,7 @@ function InputArea({ onGenerate, strings }) {
       />
       {input && (<button className='round-button' style={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-200%)', cursor: 'pointer' }} onClick={() => setInput('')}>x</button>)}
       <Box mt={2}>
-        <Button variant="contained" color="primary" onClick={() => {if(input) {onGenerate(input)} else {textareaRef.current.focus()} }}>
+        <Button variant="contained" color="primary" onClick={() => { if (input) { onGenerate(input) } else { textareaRef.current.focus() } }}>
           {strings.submit}
         </Button>
       </Box>
@@ -93,9 +93,9 @@ function App() {
         model: "gpt-3.5-turbo",
         messages: [{
           role: "user",
-          content: `your job is to find a short traditional Spanish saying that can portray the given scenario ${(locale==='en'? '(and its translation)': '(do not include its translation)')}: ${input}`
+          content: `${(locale === 'en' ? 'your job is to find a short traditional Spanish saying that can portray the given scenario (and its translation)' : 'dame un dicho o expresión tradicional español para la siguiente situación: ')}:\n ${input}`
         }],
-        temperature: 0.7,
+        temperature: 1.5,
         max_tokens: 75
       }, {
         headers: {
