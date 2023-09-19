@@ -37,7 +37,7 @@ textarea {
   height: 40px;
   border-radius: 50%;
   border: none;
-  background-color: #C60C30;
+  background-color: #008017;
   color: #ffffff;
   display: flex;
   justify-content: center; 
@@ -48,7 +48,7 @@ textarea {
 }
 
 .round-button:hover {
-  background-color: #a00a24;
+  background-color: #008017;
 }
 
 /* Mobile devices */
@@ -76,13 +76,13 @@ textarea:focus {
   /* Remove the default browser outline */
   outline: none;
   /* Use a distinct border color, you can choose your preferred color */
-  border-color: #C60C30;
+  border-color: #008017;
   /* Add a subtle glow */
-  box-shadow: 0 0 5px #C60C30;
+  box-shadow: 0 0 5px #008017;
 }
 
 .App-header {
-  background-color: #C60C30;
+  background-color: #008017;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -93,7 +93,7 @@ textarea:focus {
 }
 
 .App-link {
-  color: #C60C30;
+  color: #008017;
 }
 
 @keyframes App-logo-spin {

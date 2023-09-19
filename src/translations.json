@@ -1,6 +1,6 @@
 {
     "en": {
-        "submit": "Find a Spanish Saying",
+        "submit": "Find Rhyme",
         "placeholder": "What's on your mind?",
         "loading": "Generating...",
         "positivefeedback": "SPOT ON MATE!",
@@ -8,7 +8,7 @@
         "copied": "Copied to clipboard",
         "couldnotcopy": "Oops. Had trouble copying it.",
         "lovingit": "Loving it?",
-        "errorgenerating": "Error generating saying:",
+        "errorgenerating": "Error generating rhyme:",
         "genericerror": "An error occurred. Please try again.",
         "buymecoffee": "Buy me a coffee",
         "howtoinstall": "How to install on",
@@ -20,7 +20,7 @@
         }
     },
     "es": {
-        "submit": "Generar Chiste Español",
+        "submit": "Generar Rima",
         "placeholder": "Qué tienes en mente?",
         "loading": "Generando...",
         "positivefeedback": "LO HAS CLAVADO",
@@ -28,7 +28,7 @@
         "copied": "Copiado! ve y compártelo",
         "couldnotcopy": "Toma un pantallazo y compártelo!",
         "lovingit": "Te gusta?",
-        "errorgenerating": "Error generando el dicho:",
+        "errorgenerating": "Error generando la rima:",
         "genericerror": "Error. Por favor prueba de nuevo más tarde.",
         "buymecoffee": "Invítame a un café",
         "howtoinstall": "Cómo instalar en",

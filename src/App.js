@@ -62,7 +62,7 @@ function OutputArea({ saying, loading, onFeedback, strings }) {
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#C60C30',  // Red color from the Spanish flag
+      main: '#008017',  // Red color from the Spanish flag
     },
   },
 });
@@ -93,7 +93,7 @@ function App() {
         model: "gpt-3.5-turbo",
         messages: [{
           role: "user",
-          content: `${(locale === 'en' ? 'Your job is to find a short Spanish joke (and its translation) of the following topic' : 'Dame un chiste en Español del siguiente tema')}: ${input}`
+          content: `${(locale === 'en' ? 'Complete with a short rhyme' : 'Completa con una rima consonante')}: ${input}`
         }],
         temperature: 0.75,
         max_tokens: 200
