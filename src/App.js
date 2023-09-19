@@ -62,7 +62,7 @@ function OutputArea({ saying, loading, onFeedback, strings }) {
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#C60C30',  // Red color from the Spanish flag
+      main: '#c3c60c',  // Red color from the Spanish flag
     },
   },
 });
