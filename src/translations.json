@@ -20,23 +20,23 @@
         }
     },
     "es": {
-        "submit": "Buscar Dicho Español",
-        "placeholder": "Qué tienes en mente?",
-        "loading": "Generando...",
-        "positivefeedback": "LO HAS CLAVADO",
+        "submit": "Buscar Refrany Català",
+        "placeholder": "Què tens en ment?",
+        "loading": "Generant...",
+        "positivefeedback": "L'HAS CLAVAT",
         "negativefeedback": "HMM...NO",
-        "copied": "Copiado! ve y compártelo",
-        "couldnotcopy": "Toma un pantallazo y compártelo!",
-        "lovingit": "Te gusta?",
-        "errorgenerating": "Error generando el dicho:",
-        "genericerror": "Error. Por favor prueba de nuevo más tarde.",
-        "buymecoffee": "Invítame a un café",
-        "howtoinstall": "Cómo instalar en",
-        "installios": "Instalar en iOS",
-        "installandroid": "Instalar en Android",
+        "copied": "Copiat, comparteix-lo!",
+        "couldnotcopy": "Pren una captura y comparteix-lo!",
+        "lovingit": "T'agrada?",
+        "errorgenerating": "Error generant el refrany:",
+        "genericerror": "Error. Si us plau prova més tard.",
+        "buymecoffee": "Invita'm a un cafè",
+        "howtoinstall": "Com instal·lar en",
+        "installios": "Instal·lar a iOS",
+        "installandroid": "Instal·lar a Android",
         "instructions": {
-            "ios": " 1. Abre esta página web en tu dispositivo\n 2. Dale al botón de \"Compartir\"\n 3. Haz scroll y selecciona \"Añadir a la pantalla de inicio\"\n 4. Dale a \"Añadir\", hecho!",
-            "android": " 1. Abre esta página web en tu dispositivo\n 2. Dale a los tres botones arriba a la derecha.\n 3. Dale a \"Añadir a la pantalla de inicio\".\n 4. Dale a \"Añadir\", hecho!"
+            "ios": "1. Obre aquesta pàgina web al teu dispositiu\n2. Prem el botó 'Compartir'\n3. Fes scroll i selecciona 'Afegir a la pantalla d'inici'\n4. Prem 'Afegir', fet!",
+            "android": "1. Obre aquesta pàgina web al teu dispositiu\n2. Prem els tres botons a dalt a la dreta\n3. Prem 'Afegir a la pantalla d'inici'\n4. Prem 'Afegir', fet!"
         }
     }
 }

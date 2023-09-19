@@ -76,12 +76,12 @@ function App() {
 
   useEffect(() => {
     // Check if the browser's language starts with 'es' (for any Spanish variant)
-    if (navigator.language.startsWith('es')) {
-      setLocale('es');
-      setStrings(translations.es);
-    } else {
+    if (navigator.language.startsWith('en')) {
       setLocale('en');
       setStrings(translations.en);
+    } else {
+      setLocale('es');
+      setStrings(translations.es);
     }
   }, []);
 
@@ -93,9 +93,9 @@ function App() {
         model: "gpt-3.5-turbo",
         messages: [{
           role: "user",
-          content: `${(locale === 'en' ? 'your job is to find a short traditional Spanish saying that can portray the given scenario (and its translation)' : 'dame un dicho, expresión o refrán popular español para la siguiente situación: ')}:\n ${input}`
+          content: `${(locale === 'en' ? 'Output a traditional Catalan saying (and its English translation) for the following scenario: ' : 'Dona\'m un refrany en Català que pugui descriure la següent situació (escriu només el refrany): ')} ${input}`
         }],
-        temperature: 1.5,
+        temperature: 0.5,
         max_tokens: 75
       }, {
         headers: {
