@@ -93,10 +93,10 @@ function App() {
         model: "gpt-3.5-turbo",
         messages: [{
           role: "user",
-          content: `${(locale === 'en' ? 'your job is to find a short traditional Spanish saying that can portray the given scenario (and its translation)' : 'dame un dicho, expresión o refrán popular español para la siguiente situación: ')}:\n ${input}`
+          content: `${(locale === 'en' ? 'Your job is to find a short Spanish joke (and its translation) of the following topic' : 'Dame un chiste en Español del siguiente tema')}: ${input}`
         }],
-        temperature: 1.5,
-        max_tokens: 75
+        temperature: 0.75,
+        max_tokens: 200
       }, {
         headers: {
           'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,

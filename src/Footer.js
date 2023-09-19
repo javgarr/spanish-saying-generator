@@ -26,7 +26,7 @@ const Footer = () => {
   
     return (
         <footer className="app-footer">
-            <div class="bmc-container">
+            <div className="bmc-container">
                 <p> {strings.lovingit} </p>
                 <a href="https://www.buymeacoffee.com/javigd"><img alt="Buy me a coffee!" src={`https://img.buymeacoffee.com/button-api/?text=${strings.buymecoffee}&emoji=☕&slug=javigd&button_colour=C60C30&font_colour=ffffff&font_family=Cookie&outline_colour=ffffff&coffee_colour=ffffff`} /></a>
             </div>

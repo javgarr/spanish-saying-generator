@@ -20,7 +20,7 @@
         }
     },
     "es": {
-        "submit": "Buscar Dicho Español",
+        "submit": "Generar Chiste Español",
         "placeholder": "Qué tienes en mente?",
         "loading": "Generando...",
         "positivefeedback": "LO HAS CLAVADO",
