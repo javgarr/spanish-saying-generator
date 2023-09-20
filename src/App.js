@@ -76,7 +76,7 @@ function App() {
 
   useEffect(() => {
     // Check if the browser's language starts with 'es' (for any Spanish variant)
-    if (navigator.language.startsWith('es')) {
+    if (navigator.language.startsWith('es') || navigator.language.startsWith('ca')) {
       setLocale('es');
       setStrings(translations.es);
     } else {
