@@ -95,7 +95,7 @@ function App() {
           role: "user",
           content: `${(locale === 'en' ? 'your job is to find a short traditional Spanish saying that can portray the given scenario (and its translation)' : 'dame un dicho, expresión o refrán popular español para la siguiente situación: ')}:\n ${input}`
         }],
-        temperature: 1.5,
+        temperature: 0.75,
         max_tokens: 75
       }, {
         headers: {
